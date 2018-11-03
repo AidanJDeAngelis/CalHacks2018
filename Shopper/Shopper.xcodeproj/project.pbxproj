@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A61B42530FC4905E166044C /* Pods_Shopper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CA1CCB35038338B6605393 /* Pods_Shopper.framework */; };
+		BB8E168F218E3D7800202643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E168E218E3D7800202643 /* AppDelegate.swift */; };
+		BB8E1691218E3D7800202643 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E1690218E3D7800202643 /* ViewController.swift */; };
+		BB8E1694218E3D7800202643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E1692218E3D7800202643 /* Main.storyboard */; };
+		BB8E1696218E3D7900202643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB8E1695218E3D7900202643 /* Assets.xcassets */; };
+		BB8E1699218E3D7A00202643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E1697218E3D7A00202643 /* LaunchScreen.storyboard */; };
+		BB8E16A1218E3E5F00202643 /* ShoppingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E16A0218E3E5F00202643 /* ShoppingDataSource.swift */; };
+		BB8E16A3218E3E6C00202643 /* ShoppingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E16A2218E3E6C00202643 /* ShoppingDelegate.swift */; };
+		BB8E16A5218E3E7500202643 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E16A4218E3E7500202643 /* CardView.swift */; };
+		BB8E16A7218E3F7000202643 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8E16A6218E3F7000202643 /* CardView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		119CF45419A764B9BEAB1521 /* Pods-Shopper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shopper/Pods-Shopper.debug.xcconfig"; sourceTree = "<group>"; };
+		B6608333313DF55400FA3516 /* Pods-Shopper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shopper/Pods-Shopper.release.xcconfig"; sourceTree = "<group>"; };
+		BB8E168B218E3D7800202643 /* Shopper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB8E168E218E3D7800202643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB8E1690218E3D7800202643 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB8E1693218E3D7800202643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB8E1695218E3D7900202643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB8E1698218E3D7A00202643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BB8E169A218E3D7A00202643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB8E16A0218E3E5F00202643 /* ShoppingDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingDataSource.swift; sourceTree = "<group>"; };
+		BB8E16A2218E3E6C00202643 /* ShoppingDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingDelegate.swift; sourceTree = "<group>"; };
+		BB8E16A4218E3E7500202643 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		BB8E16A6218E3F7000202643 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		C5CA1CCB35038338B6605393 /* Pods_Shopper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB8E1688218E3D7800202643 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A61B42530FC4905E166044C /* Pods_Shopper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3368A9616B79442D0BB301DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C5CA1CCB35038338B6605393 /* Pods_Shopper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4400780209AE00AC0203AFD8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				119CF45419A764B9BEAB1521 /* Pods-Shopper.debug.xcconfig */,
+				B6608333313DF55400FA3516 /* Pods-Shopper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB8E1682218E3D7800202643 = {
+			isa = PBXGroup;
+			children = (
+				BB8E168D218E3D7800202643 /* Shopper */,
+				BB8E168C218E3D7800202643 /* Products */,
+				4400780209AE00AC0203AFD8 /* Pods */,
+				3368A9616B79442D0BB301DD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BB8E168C218E3D7800202643 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB8E168B218E3D7800202643 /* Shopper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB8E168D218E3D7800202643 /* Shopper */ = {
+			isa = PBXGroup;
+			children = (
+				BB8E168E218E3D7800202643 /* AppDelegate.swift */,
+				BB8E1690218E3D7800202643 /* ViewController.swift */,
+				BB8E16A0218E3E5F00202643 /* ShoppingDataSource.swift */,
+				BB8E16A2218E3E6C00202643 /* ShoppingDelegate.swift */,
+				BB8E16A4218E3E7500202643 /* CardView.swift */,
+				BB8E16A6218E3F7000202643 /* CardView.xib */,
+				BB8E1692218E3D7800202643 /* Main.storyboard */,
+				BB8E1695218E3D7900202643 /* Assets.xcassets */,
+				BB8E1697218E3D7A00202643 /* LaunchScreen.storyboard */,
+				BB8E169A218E3D7A00202643 /* Info.plist */,
+			);
+			path = Shopper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB8E168A218E3D7800202643 /* Shopper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB8E169D218E3D7A00202643 /* Build configuration list for PBXNativeTarget "Shopper" */;
+			buildPhases = (
+				18BCDD99B5392F4055C65767 /* [CP] Check Pods Manifest.lock */,
+				BB8E1687218E3D7800202643 /* Sources */,
+				BB8E1688218E3D7800202643 /* Frameworks */,
+				BB8E1689218E3D7800202643 /* Resources */,
+				2DF4EA58400CA2716E0F7938 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shopper;
+			productName = Shopper;
+			productReference = BB8E168B218E3D7800202643 /* Shopper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB8E1683218E3D7800202643 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Milo Darling";
+				TargetAttributes = {
+					BB8E168A218E3D7800202643 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = BB8E1686218E3D7800202643 /* Build configuration list for PBXProject "Shopper" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BB8E1682218E3D7800202643;
+			productRefGroup = BB8E168C218E3D7800202643 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB8E168A218E3D7800202643 /* Shopper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB8E1689218E3D7800202643 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB8E1699218E3D7A00202643 /* LaunchScreen.storyboard in Resources */,
+				BB8E1696218E3D7900202643 /* Assets.xcassets in Resources */,
+				BB8E16A7218E3F7000202643 /* CardView.xib in Resources */,
+				BB8E1694218E3D7800202643 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18BCDD99B5392F4055C65767 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Shopper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DF4EA58400CA2716E0F7938 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Shopper/Pods-Shopper-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Shopper/Pods-Shopper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB8E1687218E3D7800202643 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB8E16A3218E3E6C00202643 /* ShoppingDelegate.swift in Sources */,
+				BB8E16A1218E3E5F00202643 /* ShoppingDataSource.swift in Sources */,
+				BB8E1691218E3D7800202643 /* ViewController.swift in Sources */,
+				BB8E168F218E3D7800202643 /* AppDelegate.swift in Sources */,
+				BB8E16A5218E3E7500202643 /* CardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB8E1692218E3D7800202643 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB8E1693218E3D7800202643 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB8E1697218E3D7A00202643 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB8E1698218E3D7A00202643 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB8E169B218E3D7A00202643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BB8E169C218E3D7A00202643 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BB8E169E218E3D7A00202643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 119CF45419A764B9BEAB1521 /* Pods-Shopper.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MHZ6S9W47R;
+				INFOPLIST_FILE = Shopper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.milodarling.Shopper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB8E169F218E3D7A00202643 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6608333313DF55400FA3516 /* Pods-Shopper.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MHZ6S9W47R;
+				INFOPLIST_FILE = Shopper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.milodarling.Shopper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB8E1686218E3D7800202643 /* Build configuration list for PBXProject "Shopper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB8E169B218E3D7A00202643 /* Debug */,
+				BB8E169C218E3D7A00202643 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB8E169D218E3D7A00202643 /* Build configuration list for PBXNativeTarget "Shopper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB8E169E218E3D7A00202643 /* Debug */,
+				BB8E169F218E3D7A00202643 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB8E1683218E3D7800202643 /* Project object */;
+}

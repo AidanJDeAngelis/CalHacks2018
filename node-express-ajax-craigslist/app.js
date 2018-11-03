@@ -1,3 +1,8 @@
+/*
+Thank you to brozeph for the craigslist search driver
+project: https://github.com/brozeph/node-craigslist
+*/
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -13,22 +18,61 @@ var app = express();
 //Custom additions
 var server = app.listen(3000);
 app.get('/', function(req, res) {res.render('index')});
-var place = 'seattle';
-var
-  craigslist = require('node-craigslist'),
-  client = new craigslist.Client({
-    city : place
-  });
 
-client
-  .list()
-  .then((listings) => {
-    // play with listings here...
-    listings.forEach((listing) => console.log(listing));
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+//Following must be set by app request
+var city = 'sfbay';
+var baseHost = 'craigslist.org';
+var maxPrice = 9999999999;
+var minPrice = 0;
+var category = 'sss';
+
+app.get('/aidan', function(req, res) {
+  if ('city' in req.query) {
+      city = req.query.city;
+  }
+  if ('baseHost' in req.query) {
+      baseHost = req.query.baseHost;
+  }
+  if ('maxPrice' in req.query) {
+      maxPrice = req.query.maxPrice;
+  }
+  if ('minPrice' in req.query) {
+      minPrice = req.query.minPrice;
+  }
+  if ('category' in req.query) {
+      category = req.query.category;
+  }
+  var
+    craigslist = require('node-craigslist'),
+    client = new craigslist.Client({
+      city : city,
+      baseHost : baseHost,
+      maxAsk : maxPrice,
+      minAsk : minPrice,
+      category : category
+    });
+  res.setHeader("Content-Type", "application/json");
+  res.write("[")
+  client
+    .list()
+    .then(function(listings) {
+      // play with listings here...
+      for (var i = 0; i < listings.length; i+=1) {
+          listing = listings[i];
+          if (listing['hasPic']) {
+              res.write(JSON.stringify(listing));
+          }
+          if (i < listings.length - 1) {
+              res.write(",");
+          }
+      }
+    })
+    .then(function() {res.write("]"); res.end()})
+    .catch((err) => {
+      console.error(err);
+    });
+
+});
 //End additions
 
 // view engine setup

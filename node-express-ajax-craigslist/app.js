@@ -12,6 +12,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var craigslist = require('node-craigslist')
+
 var app = express();
 
 
@@ -20,49 +22,106 @@ var server = app.listen(3000);
 app.get('/', function(req, res) {res.render('index')});
 
 //Following must be set by app request
-var city = 'sfbay';
-var baseHost = 'craigslist.org';
-var maxPrice = 9999999999;
-var minPrice = 0;
-var category = 'sss';
 
-app.get('/aidan', function(req, res) {
+app.get('/list', function(req, res) {
+  var numItems = 50;
+  var options = {};
   if ('city' in req.query) {
-      city = req.query.city;
+      options['city'] = req.query.city;
   }
   if ('baseHost' in req.query) {
-      baseHost = req.query.baseHost;
+      options['baseHost'] = req.query.baseHost;
   }
   if ('maxPrice' in req.query) {
-      maxPrice = req.query.maxPrice;
+      options['maxPrice'] = req.query.maxPrice;
   }
   if ('minPrice' in req.query) {
-      minPrice = req.query.minPrice;
+      options['minPrice'] = req.query.minPrice;
   }
   if ('category' in req.query) {
-      category = req.query.category;
+      options['category'] = req.query.category;
+  }
+  if ('offset' in req.query) {
+      options['offset'] = req.query.offset;
+  }
+  if ('numItems' in req.query) {
+      numItems = req.query.numItems;
   }
   var
     craigslist = require('node-craigslist'),
-    client = new craigslist.Client({
-      city : city,
-      baseHost : baseHost,
-      maxAsk : maxPrice,
-      minAsk : minPrice,
-      category : category
-    });
+    client = new craigslist.Client(options);
   res.setHeader("Content-Type", "application/json");
   res.write("[")
   client
     .list()
     .then(function(listings) {
       // play with listings here...
-      for (var i = 0; i < listings.length; i+=1) {
+      for (var i = 0; i < listings.length && i < numItems; i+=1) {
           listing = listings[i];
+          delete listing["pid"];
           if (listing['hasPic']) {
               res.write(JSON.stringify(listing));
           }
-          if (i < listings.length - 1) {
+          if (i < listings.length - 1 && i < numItems - 1) {
+              res.write(",");
+          }
+      }
+    })
+    .then(function() {res.write("]"); res.end()})
+    .catch((err) => {
+      console.error(err);
+    });
+
+});
+app.get('/search', function(req, res) {
+  var numItems = 50;
+  options = {};
+  if (!("query" in req.query)) {
+      throw "No search query!"
+  }
+  var searchQuery = req.query.query;
+  if ('city' in req.query) {
+      options['city'] = req.query.city;
+  }
+  if ('baseHost' in req.query) {
+      options['baseHost'] = req.query.baseHost;
+  }
+  if ('maxPrice' in req.query) {
+      options['maxPrice'] = req.query.maxPrice;
+  }
+  if ('minPrice' in req.query) {
+      options['minPrice'] = req.query.minPrice;
+  }
+  if ('category' in req.query) {
+      options['category'] = req.query.category;
+  }
+  if ('postCode' in req.query) {
+      options['postal'] = req.query.postCode;
+      if ('distance' in req.query) {
+          options['distance'] = req.query.distance;
+      }
+  }
+  if ('offset' in req.query) {
+      options['offset'] = req.query.offset;
+  }
+  if ('numItems' in req.query) {
+      numItems = req.query.numItems;
+  }
+  var client = new craigslist.Client(options);
+
+  res.setHeader("Content-Type", "application/json");
+  res.write("[")
+  client
+    .search(options, searchQuery)
+    .then(function(listings) {
+      // play with listings here...
+      for (var i = 0; i < listings.length && i < numItems; i+=1) {
+          listing = listings[i];
+          delete listing["pid"];
+          if (listing['hasPic']) {
+              res.write(JSON.stringify(listing));
+          }
+          if (i < listings.length - 1 && i < numItems - 1) {
               res.write(",");
           }
       }

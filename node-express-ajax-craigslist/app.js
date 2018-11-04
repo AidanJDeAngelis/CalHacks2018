@@ -3,14 +3,7 @@ Thank you to brozeph for the craigslist search driver
 project: https://github.com/brozeph/node-craigslist
 */
 
-var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var craigslist = require('node-craigslist')
 
@@ -18,16 +11,12 @@ var app = express();
 
 
 //Custom additions
-var cheerio = require('cheerio');
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-var server = app.listen(3000);
+var server = app.listen(3069);
 var request = require('request');
-app.get('/', function(req, res) {res.render('index')});
 
 //Following must be set by app request
 
-app.get('/list', function(req, res) {
+app.get('/craigslist/list', function(req, res) {
   var numItems = 50;
   var options = {};
   if ('city' in req.query) {
@@ -86,28 +75,6 @@ app.get('/list', function(req, res) {
           }
         });
         }));
-        /*
-        for (var i = 0; i < listings.length && i < numItems; i+=1) {
-            listing = listings[i];
-            delete listing["pid"];
-            if (listing['hasPic']) {
-                request.get(listing['url'], function (error, response, body) {
-                    if (!error && response.statusCode == 200) {
-                        var m;
-                        var urls = [];
-                        var rex = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
-
-                        while ( m = rex.exec( body ) ) {
-                            urls.push( m[1] );
-                        }
-                        listing['images'] = urls;
-                    }
-                });
-                listings_.push(listing);
-                console.log(listing['images']);
-            }
-        }
-        return listings_;*/
     })
     .then(function(listings_) {
         for (var i = 0; i < listings_.length && i < numItems; i+=1) {
@@ -189,18 +156,10 @@ app.get('/search', function(req, res) {
 });
 //End additions
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -217,5 +176,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+console.log("listening on port 3069");
 
 module.exports = app;

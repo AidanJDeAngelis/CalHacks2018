@@ -21,7 +21,6 @@ class ShoppingDelegate : NSObject, KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         guard direction == .right, let dataSource = koloda.dataSource as? ShoppingDataSource,
             let shoppingURL = dataSource.cards[index].shoppingURL,
-            let imageURL = dataSource.cards[index].imageURL,
             let price = dataSource.cards[index].price,
             let item = dataSource.cards[index].item else {
                 print("where the url at tho")
@@ -30,11 +29,11 @@ class ShoppingDelegate : NSObject, KolodaViewDelegate {
         let defaults = UserDefaults.standard
         var fiends = defaults.object(forKey: "fiends") as? Array<Any> ?? []
         
-        fiends.append(["photo": imageURL.absoluteString, "url": shoppingURL.absoluteString, "price": price, "item": item])
+        fiends.append(["photos": dataSource.cards[index], "url": shoppingURL.absoluteString, "price": price, "item": item])
         
         defaults.set(fiends, forKey: "fiends")
         
-        print(defaults.object(forKey: "fiends"))
+        print(defaults.object(forKey: "fiends") ?? "no settings")
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {

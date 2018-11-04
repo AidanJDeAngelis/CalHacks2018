@@ -15,13 +15,22 @@ class CardView: UIView {
     @IBOutlet weak var priceLabel: UILabel!
     
     var shoppingURL: URL?
-    var imageURL: URL?
-    var price: CGFloat?
+    var images: [URL] = [URL]()
+    var price: String?
     var item: String?
     
-    func setImageURL(url: URL) {
-        imageView.setImageWithURL(url: url, placeholder: UIImage(named: "placeholder"))
-        self.imageURL = url
+    func setImages(images: [String]) {
+        self.images = [URL]()
+        for imageLink in images {
+            if let imageURL = URL(string: imageLink) {
+                self.images.append(imageURL)
+            }
+        }
+        self.setCurrentImage(index: 0)
+    }
+    
+    func setCurrentImage(index: Int) {
+        imageView.setImageWithURL(url: self.images[index], placeholder: nil)
     }
     
     func setName(name: String) {
@@ -29,9 +38,9 @@ class CardView: UIView {
         itemLabel.text = name
     }
     
-    func setPrice(price: CGFloat) {
+    func setPrice(price: String) {
         self.price = price
-        priceLabel.text = String(format: "$%.2f", price)
+        priceLabel.text = price
     }
     
     override init(frame: CGRect) {

@@ -99,7 +99,8 @@ let category_codes: [String] = ["sss",
 class ViewController: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var buttonView: UIView!
-    @IBOutlet weak var cityPicker: UIPickerView!
+    @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var LikeButton: UIButton!
     
     var kolodaDataSource = ShoppingDataSource()
     var kolodaDelegate = ShoppingDelegate()
@@ -109,14 +110,9 @@ class ViewController: UIViewController {
         kolodaView.dataSource = self.kolodaDataSource
         kolodaView.delegate = self.kolodaDelegate
         
-        self.cityPicker.delegate = self
-        self.cityPicker.dataSource = self
-        
-        if let code = UserDefaults.standard.string(forKey: "category"), let index = category_codes.firstIndex(of: code) {
-            self.cityPicker.selectRow(index, inComponent: 0, animated: false)
-        }
-        
         self.kolodaDataSource.pullCraigslist(self.kolodaView)
+        
+        dislikeButton.setImage(UIImage(named : "Broken Heart Unclicked"), for: .normal)
     }
     @IBAction func dislikeButtonPressed(_ sender: Any) {
         kolodaView.swipe(.left)

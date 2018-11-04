@@ -50,18 +50,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2As-de-zqS">
-                                <rect key="frame" x="120" y="540.5" width="135" height="50"/>
+                                <rect key="frame" x="94" y="540.5" width="187.5" height="66.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-Ix-nrM">
-                                        <rect key="frame" x="10" y="10" width="45" height="30"/>
-                                        <state key="normal" title="Dislike"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-Ix-nrM">
+                                        <rect key="frame" x="10" y="0.0" width="63" height="66.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Kfe-Ix-nrM" secondAttribute="height" multiplier="21:22" id="X5p-93-d3y"/>
+                                        </constraints>
+                                        <state key="normal" title="Dislike" image="Broken Heart Unclicked"/>
                                         <connections>
                                             <action selector="dislikeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cW2-2s-HX0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cor-Ow-f4n">
-                                        <rect key="frame" x="95" y="10" width="30" height="30"/>
-                                        <state key="normal" title="Like"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cor-Ow-f4n">
+                                        <rect key="frame" x="105" y="0.0" width="72.5" height="66.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cor-Ow-f4n" secondAttribute="height" multiplier="61:56" id="aU1-Vq-CW6"/>
+                                        </constraints>
+                                        <state key="normal" title="Like" image="Heart Unclicked"/>
                                         <connections>
                                             <action selector="likeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jnt-Mq-7wE"/>
                                         </connections>
@@ -69,15 +75,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="top" secondItem="2As-de-zqS" secondAttribute="top" constant="10" id="6pr-EC-CbH"/>
-                                    <constraint firstAttribute="trailing" secondItem="cor-Ow-f4n" secondAttribute="trailing" constant="10" id="PzT-Dy-IyV"/>
-                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="leading" secondItem="2As-de-zqS" secondAttribute="leading" constant="10" id="bPq-8L-yEs"/>
-                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="top" secondItem="2As-de-zqS" secondAttribute="top" constant="10" id="cyh-EF-r3l"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kfe-Ix-nrM" secondAttribute="bottom" constant="10" id="dr7-1Y-fzn"/>
-                                    <constraint firstAttribute="bottom" secondItem="cor-Ow-f4n" secondAttribute="bottom" constant="10" id="hLi-bb-G4a"/>
-                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="centerY" secondItem="2As-de-zqS" secondAttribute="centerY" id="pbg-oS-iVn"/>
-                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="leading" secondItem="Kfe-Ix-nrM" secondAttribute="trailing" constant="40" id="uR9-p0-H34"/>
-                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="centerY" secondItem="2As-de-zqS" secondAttribute="centerY" id="xEU-VF-QCf"/>
+                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="leading" secondItem="2As-de-zqS" secondAttribute="leading" constant="10" id="RA9-Zw-cui"/>
+                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="centerY" secondItem="2As-de-zqS" secondAttribute="centerY" id="Sxs-pu-Sdu"/>
+                                    <constraint firstAttribute="trailing" secondItem="cor-Ow-f4n" secondAttribute="trailing" constant="10" id="aYI-fc-m6u"/>
+                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="leading" secondItem="2As-de-zqS" secondAttribute="leading" constant="10" id="aw4-1e-JeN"/>
+                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="height" secondItem="2As-de-zqS" secondAttribute="height" id="cqK-eA-J6P"/>
+                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="centerY" secondItem="2As-de-zqS" secondAttribute="centerY" id="nzz-NG-1bu"/>
+                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="height" secondItem="2As-de-zqS" secondAttribute="height" id="tFy-O8-bTL"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoJ-gE-WfM" customClass="KolodaView" customModule="Koloda">
@@ -87,22 +91,17 @@
                                     <constraint firstAttribute="width" secondItem="qoJ-gE-WfM" secondAttribute="height" multiplier="3:4" id="kYg-qt-v0Q"/>
                                 </constraints>
                             </view>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="362-j5-8xg">
-                                <rect key="frame" x="0.0" y="600.5" width="187.5" height="66.5"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="362-j5-8xg" secondAttribute="bottom" id="2DD-Cd-W3X"/>
-                            <constraint firstItem="362-j5-8xg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8SZ-W3-Ldr"/>
-                            <constraint firstItem="362-j5-8xg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="9jy-c9-eZt"/>
+                            <constraint firstItem="2As-de-zqS" firstAttribute="top" secondItem="qoJ-gE-WfM" secondAttribute="bottom" constant="10" id="Juf-ca-kp2"/>
+                            <constraint firstItem="2As-de-zqS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Q5s-RV-OSz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2As-de-zqS" secondAttribute="bottom" constant="60" id="QP4-eA-h5E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qoJ-gE-WfM" secondAttribute="trailing" constant="20" id="YNP-DD-Jwe"/>
                             <constraint firstItem="qoJ-gE-WfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jsG-oC-tGG"/>
-                            <constraint firstItem="2As-de-zqS" firstAttribute="top" secondItem="qoJ-gE-WfM" secondAttribute="bottom" constant="10" id="pB8-hZ-b72"/>
-                            <constraint firstItem="2As-de-zqS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pmE-gO-Ge9"/>
                             <constraint firstItem="qoJ-gE-WfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="qak-nR-mTm"/>
-                            <constraint firstItem="362-j5-8xg" firstAttribute="top" secondItem="2As-de-zqS" secondAttribute="bottom" constant="10" id="sJM-dv-9Zb"/>
                             <constraint firstItem="qoJ-gE-WfM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vQd-pW-UUM"/>
+                            <constraint firstItem="2As-de-zqS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zTg-0b-uZh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -119,8 +118,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="LikeButton" destination="cor-Ow-f4n" id="MwP-gW-R6r"/>
                         <outlet property="buttonView" destination="2As-de-zqS" id="1lJ-JC-EpS"/>
-                        <outlet property="cityPicker" destination="362-j5-8xg" id="0Iq-eh-Ge0"/>
+                        <outlet property="dislikeButton" destination="Kfe-Ix-nrM" id="jKt-Cm-SdC"/>
                         <outlet property="kolodaView" destination="qoJ-gE-WfM" id="dyl-t3-eeJ"/>
                     </connections>
                 </viewController>
@@ -157,4 +157,8 @@
             <point key="canvasLocation" x="969" y="6"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Broken Heart Unclicked" width="359.51998901367188" height="360"/>
+        <image name="Heart Unclicked" width="359.51998901367188" height="360"/>
+    </resources>
 </document>

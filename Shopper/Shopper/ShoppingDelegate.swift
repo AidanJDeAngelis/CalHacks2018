@@ -15,6 +15,7 @@ class ShoppingDelegate : NSObject, KolodaViewDelegate {
         guard let dataSource = koloda.dataSource as? ShoppingDataSource else {
             return
         }
+        koloda.viewWithTag(69)?.isHidden = false
         dataSource.pullCraigslist(koloda, forced: false)
     }
     

@@ -44,6 +44,7 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
                         self.addCard(with: title, images: photos, link: url, price: price, koloda: koloda)
                 }
             }
+                koloda.viewWithTag(69)?.isHidden = true
                 if (forced) {
                     koloda.resetCurrentCardIndex()
                 } else {

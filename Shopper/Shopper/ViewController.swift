@@ -13,7 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var buttonView: UIView!
     @IBOutlet weak var dislikeButton: UIButton!
-    @IBOutlet weak var LikeButton: UIButton!
     
     var kolodaDataSource = ShoppingDataSource()
     var kolodaDelegate = ShoppingDelegate()

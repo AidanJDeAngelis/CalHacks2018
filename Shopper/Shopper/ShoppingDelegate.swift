@@ -11,6 +11,7 @@ import Koloda
 
 class ShoppingDelegate : NSObject, KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        print("we out here")
         guard let dataSource = koloda.dataSource as? ShoppingDataSource else {
             return
         }
@@ -19,14 +20,20 @@ class ShoppingDelegate : NSObject, KolodaViewDelegate {
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         guard let dataSource = koloda.dataSource as? ShoppingDataSource,
-            let shoppingURL = dataSource.cards[index].shoppingURL else {
+            let shoppingURL = dataSource.cards[index].shoppingURL,
+            let imageURL = dataSource.cards[index].imageURL,
+            let price = dataSource.cards[index].price,
+            let item = dataSource.cards[index].item else {
+                print("where the url at tho")
                 return
         }
-        UIApplication.shared.open(shoppingURL, options: [:]) { (success) in
-            if (!success) {
-                print("oh no!")
-            }
-        }
+        let defaults = UserDefaults.standard
+        var fiends = defaults.object(forKey: "fiends") as? Array<Any> ?? []
         
+        fiends.append(["photo": imageURL.absoluteString, "url": shoppingURL.absoluteString, "price": price, "item": item])
+        
+        defaults.set(fiends, forKey: "fiends")
+        
+        print(defaults.object(forKey: "fiends"))
     }
 }

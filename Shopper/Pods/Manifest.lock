@@ -1,20 +1,24 @@
 PODS:
+  - FLEX (2.4.0)
   - Koloda (4.3.1):
     - pop (~> 1.0)
   - pop (1.0.10)
 
 DEPENDENCIES:
+  - FLEX (~> 2.0)
   - Koloda
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - FLEX
     - Koloda
     - pop
 
 SPEC CHECKSUMS:
+  FLEX: bd1a39e55b56bb413b6f1b34b3c10a0dc44ef079
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
 
-PODFILE CHECKSUM: ee6cac32e80210913be02b1c1dabd3bec723bbd2
+PODFILE CHECKSUM: 13bcd202197e58f656e1c5f83cb2bed33706fd25
 
 COCOAPODS: 1.5.3

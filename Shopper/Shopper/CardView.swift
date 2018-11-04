@@ -15,16 +15,22 @@ class CardView: UIView {
     @IBOutlet weak var priceLabel: UILabel!
     
     var shoppingURL: URL?
+    var imageURL: URL?
+    var price: CGFloat?
+    var item: String?
     
     func setImageURL(url: URL) {
         imageView.setImageWithURL(url: url, placeholder: UIImage(named: "placeholder"))
+        self.imageURL = url
     }
     
     func setName(name: String) {
+        self.item = name
         itemLabel.text = name
     }
     
     func setPrice(price: CGFloat) {
+        self.price = price
         priceLabel.text = String(format: "$%.2f", price)
     }
     
@@ -32,6 +38,7 @@ class CardView: UIView {
         super.init(frame: frame)
         Bundle.main.loadNibNamed("CardView", owner: self, options: nil)
         self.addSubview(self.contentView)
+        self.contentView.frame = self.bounds;
     }
     
     required init?(coder aDecoder: NSCoder) {

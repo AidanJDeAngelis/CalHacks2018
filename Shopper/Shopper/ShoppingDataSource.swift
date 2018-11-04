@@ -51,6 +51,7 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
         card.setImageURL(url: image)
         card.setName(name: name)
         card.setPrice(price: price)
+        card.shoppingURL = link
         cards.append(card)
         
     }
@@ -60,7 +61,7 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
     }
     
     func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
-        return .fast
+        return .default
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {

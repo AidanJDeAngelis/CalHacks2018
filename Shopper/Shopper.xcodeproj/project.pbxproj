@@ -19,6 +19,8 @@
 		BB8E16A7218E3F7000202643 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8E16A6218E3F7000202643 /* CardView.xib */; };
 		BB8E16A9218E5B9600202643 /* HorizontalSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E16A8218E5B9600202643 /* HorizontalSegue.swift */; };
 		BB8E16AB218E6AF000202643 /* FiendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E16AA218E6AF000202643 /* FiendTableViewController.swift */; };
+		BB8E16AD218EDAAF00202643 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E16AC218EDAAF00202643 /* SegueFromLeft.swift */; };
+		BB8E16AF218EDFB100202643 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E16AE218EDFB100202643 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		BB8E16A6218E3F7000202643 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		BB8E16A8218E5B9600202643 /* HorizontalSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalSegue.swift; sourceTree = "<group>"; };
 		BB8E16AA218E6AF000202643 /* FiendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiendTableViewController.swift; sourceTree = "<group>"; };
+		BB8E16AC218EDAAF00202643 /* SegueFromLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueFromLeft.swift; sourceTree = "<group>"; };
+		BB8E16AE218EDFB100202643 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C5CA1CCB35038338B6605393 /* Pods_Shopper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Shopper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,6 +101,8 @@
 				BB8E16A4218E3E7500202643 /* CardView.swift */,
 				BB8E16A6218E3F7000202643 /* CardView.xib */,
 				BB8E1692218E3D7800202643 /* Main.storyboard */,
+				BB8E16AE218EDFB100202643 /* SettingsViewController.swift */,
+				BB8E16AC218EDAAF00202643 /* SegueFromLeft.swift */,
 				BB8E16AA218E6AF000202643 /* FiendTableViewController.swift */,
 				BB8E16A8218E5B9600202643 /* HorizontalSegue.swift */,
 				BB8E1695218E3D7900202643 /* Assets.xcassets */,
@@ -229,7 +235,9 @@
 				BB8E16A9218E5B9600202643 /* HorizontalSegue.swift in Sources */,
 				BB8E168F218E3D7800202643 /* AppDelegate.swift in Sources */,
 				BB8E16AB218E6AF000202643 /* FiendTableViewController.swift in Sources */,
+				BB8E16AD218EDAAF00202643 /* SegueFromLeft.swift in Sources */,
 				BB8E16A5218E3E7500202643 /* CardView.swift in Sources */,
+				BB8E16AF218EDFB100202643 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

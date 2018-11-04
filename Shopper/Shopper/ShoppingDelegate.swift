@@ -18,8 +18,8 @@ class ShoppingDelegate : NSObject, KolodaViewDelegate {
         dataSource.pullCraigslist(koloda)
     }
     
-    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
-        guard let dataSource = koloda.dataSource as? ShoppingDataSource,
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        guard direction == .right, let dataSource = koloda.dataSource as? ShoppingDataSource,
             let shoppingURL = dataSource.cards[index].shoppingURL,
             let imageURL = dataSource.cards[index].imageURL,
             let price = dataSource.cards[index].price,
@@ -35,5 +35,9 @@ class ShoppingDelegate : NSObject, KolodaViewDelegate {
         defaults.set(fiends, forKey: "fiends")
         
         print(defaults.object(forKey: "fiends"))
+    }
+    
+    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+        
     }
 }

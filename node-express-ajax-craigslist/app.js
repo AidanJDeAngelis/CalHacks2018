@@ -18,7 +18,11 @@ var app = express();
 
 
 //Custom additions
+var cheerio = require('cheerio');
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 var server = app.listen(3000);
+var request = require('request');
 app.get('/', function(req, res) {res.render('index')});
 
 //Following must be set by app request
@@ -55,19 +59,70 @@ app.get('/list', function(req, res) {
   client
     .list()
     .then(function(listings) {
-      // play with listings here...
-      for (var i = 0; i < listings.length && i < numItems; i+=1) {
-          listing = listings[i];
-          delete listing["pid"];
-          if (listing['hasPic']) {
-              res.write(JSON.stringify(listing));
+        // play with listings here...
+
+
+        listings_ = [];
+        if (numItems < listings.length) {
+          listings.splice(numItems);
+        }
+        return Promise.all(listings.map(function(listing) {
+          return new Promise(function(resolve, reject) {
+            delete listing["pid"];
+            if (listing['hasPic']) {
+                request.get(listing['url'], function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        var m;
+                        var urls = [];
+                        var rex = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
+
+                        while ( m = rex.exec( body ) ) {
+                            urls.push( m[1] );
+                        }
+                        listing['images'] = urls;
+                        resolve(listing);
+                    }
+                });
           }
-          if (i < listings.length - 1 && i < numItems - 1) {
-              res.write(",");
-          }
-      }
+        });
+        }));
+        /*
+        for (var i = 0; i < listings.length && i < numItems; i+=1) {
+            listing = listings[i];
+            delete listing["pid"];
+            if (listing['hasPic']) {
+                request.get(listing['url'], function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        var m;
+                        var urls = [];
+                        var rex = /<img.*?src="([^">]*\/([^">]*?))".*?>/g;
+
+                        while ( m = rex.exec( body ) ) {
+                            urls.push( m[1] );
+                        }
+                        listing['images'] = urls;
+                    }
+                });
+                listings_.push(listing);
+                console.log(listing['images']);
+            }
+        }
+        return listings_;*/
     })
-    .then(function() {res.write("]"); res.end()})
+    .then(function(listings_) {
+        for (var i = 0; i < listings_.length && i < numItems; i+=1) {
+            listing = listings_[i];
+            if (listing['hasPic']) {
+                res.write(JSON.stringify(listing));
+                if (i < listings_.length - 1 && i < numItems - 1) {
+                    res.write(",");
+                } else {
+                  res.write("]");
+                  res.end();
+                }
+            }
+        }
+    })
     .catch((err) => {
       console.error(err);
     });

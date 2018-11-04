@@ -21,6 +21,7 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
             params += "&city=\(city)"
         }
         if let category = UserDefaults.standard.string(forKey: "category") {
+            print("adding category")
             params += "&category=\(category)"
         }
         guard let craigslistURL = URL(string: craigslistLink+params) else {
@@ -39,29 +40,19 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
                     let price = listing["price"] as? String,
                     let link = listing["url"] as? String,
                     let url = URL(string: link) {
-                    self.addCard(with: title, images: photos, link: url, price: price, koloda:
-                    koloda)
+                    //DispatchQueue.main.async {
+                        self.addCard(with: title, images: photos, link: url, price: price, koloda: koloda)
+                    //}
                 }
             }
-            DispatchQueue.main.async {
-                koloda.reloadData()
-            }
+            koloda.reloadData()
             
         }
         task.resume()
-        /*
-        for _ in 1...4 {
-            let photoURL = URL(string: "https://www.profiletalent.com.au/wp-content/uploads/2017/05/profile-talent-ant-simpson-feature.jpg")!
-            let title = "Stud"
-            let price = CGFloat(4.2)
-            let url = URL(string: "https://example.com")!
-            self.addCard(with: title, image: photoURL, link: url, price: price, koloda: koloda)
-        }
-        koloda.reloadData()
-        */
+
     }
     
-    func pullEbay(_ koloda: KolodaView, search_term : String, max_entries: Integer) {
+    func pullEbay(_ koloda: KolodaView, search_term : String, max_entries: Int) {
         
         // Given a search term, this function will call the eBay findItemsByKeywords API and return a list of Dictionaries for item that showed up in the eBay search for the search term. The list will have a capacity of max_entries.
         

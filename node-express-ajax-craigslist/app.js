@@ -5,7 +5,8 @@ project: https://github.com/brozeph/node-craigslist
 
 var express = require('express');
 
-var craigslist = require('node-craigslist')
+var craigslist = require('node-craigslist'),
+client = new craigslist.Client();
 
 var app = express();
 
@@ -40,13 +41,10 @@ app.get('/craigslist/list', function(req, res) {
   if ('numItems' in req.query) {
       numItems = req.query.numItems;
   }
-  var
-    craigslist = require('node-craigslist'),
-    client = new craigslist.Client(options);
   res.setHeader("Content-Type", "application/json");
   res.write("[")
   client
-    .list()
+    .list(options)
     .then(function(listings) {
         // play with listings here...
 

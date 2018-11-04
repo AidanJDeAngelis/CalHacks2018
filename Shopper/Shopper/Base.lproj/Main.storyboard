@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="eKw-sJ-MQt">
+            <objects>
+                <viewController id="sM6-zT-fAs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iLK-sp-AQT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tSu-Pl-CQh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1mx-rQ-rEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="-734"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="hNh-t9-Qig">
             <objects>
@@ -35,7 +50,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2As-de-zqS">
-                                <rect key="frame" x="120" y="570.5" width="135" height="50"/>
+                                <rect key="frame" x="120" y="540.5" width="135" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-Ix-nrM">
                                         <rect key="frame" x="10" y="10" width="45" height="30"/>
@@ -72,19 +87,31 @@
                                     <constraint firstAttribute="width" secondItem="qoJ-gE-WfM" secondAttribute="height" multiplier="3:4" id="kYg-qt-v0Q"/>
                                 </constraints>
                             </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="362-j5-8xg">
+                                <rect key="frame" x="0.0" y="600.5" width="187.5" height="66.5"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="362-j5-8xg" secondAttribute="bottom" id="2DD-Cd-W3X"/>
+                            <constraint firstItem="362-j5-8xg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8SZ-W3-Ldr"/>
+                            <constraint firstItem="362-j5-8xg" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="9jy-c9-eZt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qoJ-gE-WfM" secondAttribute="trailing" constant="20" id="YNP-DD-Jwe"/>
                             <constraint firstItem="qoJ-gE-WfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jsG-oC-tGG"/>
-                            <constraint firstItem="2As-de-zqS" firstAttribute="top" secondItem="qoJ-gE-WfM" secondAttribute="bottom" constant="40" id="pB8-hZ-b72"/>
+                            <constraint firstItem="2As-de-zqS" firstAttribute="top" secondItem="qoJ-gE-WfM" secondAttribute="bottom" constant="10" id="pB8-hZ-b72"/>
                             <constraint firstItem="2As-de-zqS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pmE-gO-Ge9"/>
                             <constraint firstItem="qoJ-gE-WfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="qak-nR-mTm"/>
+                            <constraint firstItem="362-j5-8xg" firstAttribute="top" secondItem="2As-de-zqS" secondAttribute="bottom" constant="10" id="sJM-dv-9Zb"/>
                             <constraint firstItem="qoJ-gE-WfM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vQd-pW-UUM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="phd-jt-DZv">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="FQE-Ds-SV0">
+                            <connections>
+                                <segue destination="sM6-zT-fAs" kind="custom" id="buA-X0-b4p"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Fiends" id="bO7-yg-0Hw">
                             <connections>
                                 <segue destination="1dQ-mQ-yD7" kind="show" id="Xkv-WU-Eei"/>
@@ -93,12 +120,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="buttonView" destination="2As-de-zqS" id="1lJ-JC-EpS"/>
+                        <outlet property="cityPicker" destination="362-j5-8xg" id="0Iq-eh-Ge0"/>
                         <outlet property="kolodaView" destination="qoJ-gE-WfM" id="dyl-t3-eeJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="6"/>
+            <point key="canvasLocation" x="112.8" y="5.8470764617691158"/>
         </scene>
         <!--Fiend Table View Controller-->
         <scene sceneID="4c1-bB-FXB">

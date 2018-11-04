@@ -15,7 +15,7 @@ class ShoppingDelegate : NSObject, KolodaViewDelegate {
         guard let dataSource = koloda.dataSource as? ShoppingDataSource else {
             return
         }
-        dataSource.pullCraigslist(koloda)
+        dataSource.pullCraigslist(koloda, forced: false)
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {

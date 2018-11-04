@@ -97,6 +97,7 @@ let category_codes: [String] = ["sss",
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var categoryPicker: UIPickerView!
+    @IBOutlet weak var cityTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,6 +111,10 @@ class SettingsViewController: UIViewController {
         
         if let code = UserDefaults.standard.string(forKey: "category"), let index = category_codes.firstIndex(of: code) {
             self.categoryPicker.selectRow(index, inComponent: 0, animated: false)
+        }
+        
+        if let city = UserDefaults.standard.string(forKey: "city") {
+            cityTextField.text = city
         }
 
         // Do any additional setup after loading the view.

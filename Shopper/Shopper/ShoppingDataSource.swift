@@ -15,7 +15,7 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
     
     var cards: [CardView] = []
     
-    func pullCraigslist(_ koloda: KolodaView) {
+    func pullCraigslist(_ koloda: KolodaView, forced: Bool) {
         var params = "?numItems=15&offset=\(cards.count)"
         if let city = UserDefaults.standard.string(forKey: "city") {
             params += "&city=\(city)"
@@ -33,6 +33,7 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
                 print("Failed to get craigslist listings")
                 return
             }
+            DispatchQueue.main.async {
             for listing in listings {
                 if let photos = listing["images"] as? [String],
                     photos.count > 0,
@@ -40,13 +41,16 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
                     let price = listing["price"] as? String,
                     let link = listing["url"] as? String,
                     let url = URL(string: link) {
-                    //DispatchQueue.main.async {
                         self.addCard(with: title, images: photos, link: url, price: price, koloda: koloda)
-                    //}
                 }
             }
-            koloda.reloadData()
+                if (forced) {
+                    koloda.resetCurrentCardIndex()
+                } else {
+                    koloda.reloadData()
+                }
             
+            }
         }
         task.resume()
 
@@ -118,12 +122,13 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
     }
     
     func addCard(with name: String, images: [String], link: URL, price: String, koloda: KolodaView) {
-        let card = CardView(frame: koloda.bounds)
-        card.setImages(images: images)
-        card.setName(name: name)
-        card.setPrice(price: price)
-        card.shoppingURL = link
-        cards.append(card)
+            let card = CardView(frame: koloda.bounds)
+            card.setImages(images: images)
+            card.setName(name: name)
+            card.setPrice(price: price)
+            card.shoppingURL = link
+            self.cards.append(card)
+        
         
     }
     

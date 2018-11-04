@@ -86,6 +86,7 @@ e.g. sfbay for sfbay.craigslist.org</string>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="categoryPicker" destination="362-j5-8xg" id="SXb-Ge-k8h"/>
+                        <outlet property="cityTextField" destination="bxY-s7-ScE" id="PRf-vq-2ck"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mx-rQ-rEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,61 +118,80 @@ e.g. sfbay for sfbay.craigslist.org</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2As-de-zqS">
-                                <rect key="frame" x="120" y="540.5" width="135" height="40"/>
+                                <rect key="frame" x="94" y="540.5" width="187.5" height="56.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-Ix-nrM">
-                                        <rect key="frame" x="10" y="5" width="45" height="30"/>
-                                        <state key="normal" title="Dislike"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfe-Ix-nrM">
+                                        <rect key="frame" x="10" y="0.0" width="53.5" height="56.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Kfe-Ix-nrM" secondAttribute="height" multiplier="21:22" id="X5p-93-d3y"/>
+                                        </constraints>
+                                        <state key="normal" title="Dislike" image="Broken Heart Unclicked"/>
                                         <connections>
                                             <action selector="dislikeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cW2-2s-HX0"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cor-Ow-f4n">
-                                        <rect key="frame" x="95" y="5" width="30" height="30"/>
-                                        <state key="normal" title="Like"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cor-Ow-f4n">
+                                        <rect key="frame" x="121" y="0.0" width="56.5" height="56.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="cor-Ow-f4n" secondAttribute="height" multiplier="56:56" id="aU1-Vq-CW6"/>
+                                        </constraints>
+                                        <state key="normal" title="Like" image="Heart Unclicked"/>
                                         <connections>
                                             <action selector="likeButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jnt-Mq-7wE"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="cor-Ow-f4n" secondAttribute="trailing" constant="10" id="PzT-Dy-IyV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Kfe-Ix-nrM" secondAttribute="bottom" constant="5" id="Tfn-Za-fpi"/>
-                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="top" secondItem="2As-de-zqS" secondAttribute="top" constant="5" id="WYi-id-VZo"/>
-                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="leading" secondItem="2As-de-zqS" secondAttribute="leading" constant="10" id="bPq-8L-yEs"/>
-                                    <constraint firstAttribute="bottom" secondItem="cor-Ow-f4n" secondAttribute="bottom" constant="5" id="hkx-rh-OxS"/>
-                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="centerY" secondItem="2As-de-zqS" secondAttribute="centerY" id="pbg-oS-iVn"/>
-                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="leading" secondItem="Kfe-Ix-nrM" secondAttribute="trailing" constant="40" id="uR9-p0-H34"/>
-                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="top" secondItem="2As-de-zqS" secondAttribute="top" constant="5" id="wMH-90-cjh"/>
-                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="centerY" secondItem="2As-de-zqS" secondAttribute="centerY" id="xEU-VF-QCf"/>
+                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="leading" secondItem="2As-de-zqS" secondAttribute="leading" constant="10" id="RA9-Zw-cui"/>
+                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="centerY" secondItem="2As-de-zqS" secondAttribute="centerY" id="Sxs-pu-Sdu"/>
+                                    <constraint firstAttribute="trailing" secondItem="cor-Ow-f4n" secondAttribute="trailing" constant="10" id="aYI-fc-m6u"/>
+                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="leading" secondItem="2As-de-zqS" secondAttribute="leading" constant="10" id="aw4-1e-JeN"/>
+                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="height" secondItem="2As-de-zqS" secondAttribute="height" id="cqK-eA-J6P"/>
+                                    <constraint firstItem="cor-Ow-f4n" firstAttribute="centerY" secondItem="2As-de-zqS" secondAttribute="centerY" id="nzz-NG-1bu"/>
+                                    <constraint firstItem="Kfe-Ix-nrM" firstAttribute="height" secondItem="2As-de-zqS" secondAttribute="height" id="tFy-O8-bTL"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoJ-gE-WfM" customClass="KolodaView" customModule="Koloda">
                                 <rect key="frame" x="20" y="84" width="335" height="446.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qoJ-gE-WfM" secondAttribute="height" multiplier="3:4" id="kYg-qt-v0Q"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xD-Xe-ETY">
-                                <rect key="frame" x="161" y="607" width="53" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhX-pF-TrC">
+                                <rect key="frame" x="161" y="622" width="53" height="30"/>
                                 <state key="normal" title="Refresh"/>
                                 <connections>
-                                    <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b1r-Vx-lss"/>
+                                    <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YGX-wW-zfb"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ReA-fh-Pj2">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading fiends..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuT-CE-MGc">
+                                <rect key="frame" x="124" y="353.5" width="127" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.85450556506849318" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2As-de-zqS" secondAttribute="bottom" constant="70" id="7Sf-05-F8s"/>
+                            <constraint firstItem="2As-de-zqS" firstAttribute="top" secondItem="qoJ-gE-WfM" secondAttribute="bottom" constant="10" id="Juf-ca-kp2"/>
+                            <constraint firstItem="QuT-CE-MGc" firstAttribute="top" secondItem="ReA-fh-Pj2" secondAttribute="bottom" constant="10" id="KUv-wd-oXp"/>
+                            <constraint firstItem="ReA-fh-Pj2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LUh-dY-g3j"/>
+                            <constraint firstItem="2As-de-zqS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.5" id="Q5s-RV-OSz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mhX-pF-TrC" secondAttribute="bottom" constant="15" id="Wxs-Jt-jeo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qoJ-gE-WfM" secondAttribute="trailing" constant="20" id="YNP-DD-Jwe"/>
+                            <constraint firstItem="mhX-pF-TrC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gR0-K8-n0t"/>
+                            <constraint firstItem="QuT-CE-MGc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hv9-cK-D80"/>
                             <constraint firstItem="qoJ-gE-WfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jsG-oC-tGG"/>
-                            <constraint firstItem="2As-de-zqS" firstAttribute="top" secondItem="qoJ-gE-WfM" secondAttribute="bottom" constant="10" id="pB8-hZ-b72"/>
-                            <constraint firstItem="2As-de-zqS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pmE-gO-Ge9"/>
+                            <constraint firstItem="ReA-fh-Pj2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kpv-49-dVL"/>
                             <constraint firstItem="qoJ-gE-WfM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="qak-nR-mTm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7xD-Xe-ETY" secondAttribute="bottom" constant="30" id="ruu-cW-uQw"/>
-                            <constraint firstItem="7xD-Xe-ETY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sLk-Qe-GHT"/>
                             <constraint firstItem="qoJ-gE-WfM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vQd-pW-UUM"/>
+                            <constraint firstItem="2As-de-zqS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zTg-0b-uZh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -188,7 +208,9 @@ e.g. sfbay for sfbay.craigslist.org</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="LikeButton" destination="cor-Ow-f4n" id="MwP-gW-R6r"/>
                         <outlet property="buttonView" destination="2As-de-zqS" id="1lJ-JC-EpS"/>
+                        <outlet property="dislikeButton" destination="Kfe-Ix-nrM" id="jKt-Cm-SdC"/>
                         <outlet property="kolodaView" destination="qoJ-gE-WfM" id="dyl-t3-eeJ"/>
                     </connections>
                 </viewController>
@@ -225,4 +247,8 @@ e.g. sfbay for sfbay.craigslist.org</string>
             <point key="canvasLocation" x="969" y="6"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Broken Heart Unclicked" width="359.51998901367188" height="360"/>
+        <image name="Heart Unclicked" width="359.51998901367188" height="360"/>
+    </resources>
 </document>

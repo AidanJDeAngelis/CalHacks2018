@@ -12,7 +12,8 @@ import Koloda
 class ViewController: UIViewController {
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var buttonView: UIView!
-    @IBOutlet weak var cityPicker: UIPickerView!
+    @IBOutlet weak var dislikeButton: UIButton!
+    @IBOutlet weak var LikeButton: UIButton!
     
     var kolodaDataSource = ShoppingDataSource()
     var kolodaDelegate = ShoppingDelegate()
@@ -22,7 +23,8 @@ class ViewController: UIViewController {
         kolodaView.dataSource = self.kolodaDataSource
         kolodaView.delegate = self.kolodaDelegate
         
-        self.kolodaDataSource.pullCraigslist(self.kolodaView)
+        self.kolodaDataSource.pullCraigslist(self.kolodaView, forced: false)
+        
     }
     @IBAction func dislikeButtonPressed(_ sender: Any) {
         kolodaView.swipe(.left)
@@ -33,6 +35,6 @@ class ViewController: UIViewController {
     }
     @IBAction func refreshButtonPressed(_ sender: Any) {
         self.kolodaDataSource.cards = [CardView]()
-        self.kolodaDataSource.pullCraigslist(self.kolodaView)
+        self.kolodaDataSource.pullCraigslist(self.kolodaView, forced: true)
     }
 }

@@ -155,7 +155,7 @@ e.g. sfbay for sfbay.craigslist.org</string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoJ-gE-WfM" customClass="KolodaView" customModule="Koloda">
                                 <rect key="frame" x="20" y="84" width="335" height="446.5"/>
                                 <subviews>
-                                    <view hidden="YES" tag="69" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chp-0D-1Mz">
+                                    <view tag="69" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chp-0D-1Mz">
                                         <rect key="frame" x="0.0" y="182.5" width="335" height="82"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading fiends..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuT-CE-MGc">

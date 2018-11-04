@@ -18,7 +18,7 @@ var request = require('request');
 
 app.get('/craigslist/list', function(req, res) {
   var numItems = 50;
-  var options = {};
+  var options = {'city':'sfbay'};
   if ('city' in req.query) {
       options['city'] = req.query.city;
   }

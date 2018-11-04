@@ -42,7 +42,7 @@ class FiendTableViewController: UITableViewController, SFSafariViewControllerDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "FIEND", for: indexPath)
 
         if let fiends = UserDefaults.standard.object(forKey:"fiends") as? Array<Dictionary<String, Any>>,
-            let item = fiends[indexPath.row]["item"] as? String {
+            let item = fiends[(fiends.count - 1) - indexPath.row]["item"] as? String {
             cell.textLabel?.text = item
         }
         
@@ -50,7 +50,7 @@ class FiendTableViewController: UITableViewController, SFSafariViewControllerDel
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let fiends: Array<Dictionary<String, Any>> = UserDefaults.standard.object(forKey: "fiends") as? Array<Dictionary<String, Any>>, let link = URL(string: fiends[indexPath.row]["url"] as! String) else {
+        guard let fiends: Array<Dictionary<String, Any>> = UserDefaults.standard.object(forKey: "fiends") as? Array<Dictionary<String, Any>>, let link = URL(string: fiends[(fiends.count - 1) - indexPath.row]["url"] as! String) else {
             print("no fiend to launch")
             return
         }

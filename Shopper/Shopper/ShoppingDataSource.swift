@@ -16,7 +16,7 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
     var cards: [CardView] = []
     
     func pullCraigslist(_ koloda: KolodaView) {
-        var params = "?numItems=15"
+        var params = "?numItems=15&offset=\(cards.count)"
         if let city = UserDefaults.standard.string(forKey: "city") {
             params += "&city=\(city)"
         }
@@ -43,7 +43,10 @@ class ShoppingDataSource : NSObject, KolodaViewDataSource {
                     koloda)
                 }
             }
-            koloda.reloadData()
+            DispatchQueue.main.async {
+                koloda.reloadData()
+            }
+            
         }
         task.resume()
         /*

@@ -29,11 +29,11 @@ class ShoppingDelegate : NSObject, KolodaViewDelegate {
         let defaults = UserDefaults.standard
         var fiends = defaults.object(forKey: "fiends") as? Array<Any> ?? []
         
-        fiends.append(["photos": dataSource.cards[index], "url": shoppingURL.absoluteString, "price": price, "item": item])
+        fiends.append(["photos": dataSource.cards[index].images.map({ (url) -> String in
+            return url.absoluteString;
+        }), "url": shoppingURL.absoluteString, "price": price, "item": item])
         
         defaults.set(fiends, forKey: "fiends")
-        
-        print(defaults.object(forKey: "fiends") ?? "no settings")
     }
     
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
